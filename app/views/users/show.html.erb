@@ -1,0 +1,22 @@
+<div class="row">
+    <aside class="col-xs-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+<%= @user.name %>
+                </h3>
+                <img class="media-object img-rounded img-responsive" src="
+<%= gravatar_url(@user, { size: 500 }) %>
+" alt="">
+            </div>
+        </div>
+    </aside>
+    <div class="col-xs-9">
+        <ul class="nav nav-tabs nav-justified">
+            <li><a href="#">投稿一覧</a></li>
+            <li><a href="#">フォロー</a></li>
+            <li><a href="#">フォローワー</a></li>
+            <li><a href="#">お気に入り一覧</a></li>
+        </ul>
+    </div>
+</div>
