@@ -1,8 +1,13 @@
 <% if logged_in? %>
 
-    <p>ログイン完了ユーザ:
-<%= current_user.name %>
-</p>
+<%= render 'hataposts/form', hatapost: @hatapost %>
+
+        <div class="col-xs-8">
+            
+<%= render 'hataposts/hataposts', hataposts: @hataposts %>
+
+        </div>
+    </div>
 
 <% else %> 
 

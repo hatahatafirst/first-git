@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :create]
+  
+  resources :hataposts, only: [:create, :destroy, :edit, :update]
+  get 'hataposts/:id', to: 'hataposts#update'
 end
