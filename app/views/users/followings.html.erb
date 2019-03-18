@@ -5,18 +5,19 @@
                 <h3 class="panel-title">
 <%= @user.name %>
                 </h3>
+                <div class="panel-body">
                 <img class="media-object img-rounded img-responsive" src="
 <%= gravatar_url(@user, { size: 500 }) %>
 " alt="">
+                </div>
             </div>
         </div>
-        
 <%= render 'relationships/follow_button', user: @user %>
 
     </aside>
     <div class="col-xs-9">
         <ul class="nav nav-tabs nav-justified">
-            <<li class="
+            <li class="
 <%= 'active' if current_page?(user_path(@user)) %>
 ">
 <%= link_to user_path(@user) do %>
@@ -54,7 +55,7 @@
 </li>
         </ul>
 
-<%= render 'hataposts/hataposts', hataposts: @hataposts %>
+<%= render 'users', users: @followings %>
 
     </div>
 </div>
