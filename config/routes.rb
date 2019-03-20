@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'hataposts/:id', to: 'hataposts#update'
   
   get 'signup', to: 'users#new'
-  resources :users, only: [:index, :show, :new, :create, :likes] do
+  resources :users, only: [:index, :show, :new, :create, :likes, :edit, :update] do
     member do
       get :followings
       get :followers
