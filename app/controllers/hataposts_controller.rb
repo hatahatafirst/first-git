@@ -8,7 +8,7 @@ class HatapostsController < ApplicationController
       flash[:success] = 'メッセージを投稿しました。'
       redirect_to root_url
     else 
-      @hataposts = current_user.hataposts.order('created_at DESC').page(params[:page])
+      @hataposts = current_user.feed_hataposts.order('created_at DESC').page(params[:page])
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
       render 'toppages/index'
     end 

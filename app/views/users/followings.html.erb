@@ -45,11 +45,11 @@
 <% end %>
 </li>
             <li class="
-<%= 'active' if current_page?(user_path(@user)) %>
+<%= 'active' if current_page?(likes_user_path(@user)) %>
 ">
-<%= link_to user_path(@user) do %>
+<%= link_to likes_user_path(@user) do %>
 お気に入り一覧 <span class="badge">
-<%= @count_hataposts %>
+<%= @count_likes %>
 </span>
 <% end %>
 </li>

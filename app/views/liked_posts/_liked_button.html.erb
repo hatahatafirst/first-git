@@ -1,0 +1,22 @@
+<% if current_user.favorite?(hatapost) %>
+
+<%= form_for(current_user.liked_posts.find_by(hatapost_id: hatapost.id), html: {method: :delete}) do |f| %>
+
+<%= hidden_field_tag :hatapost_id, hatapost.id %>
+
+<%= f.submit 'お気に入り解除', class: 'btn btn-danger btn-block' %>
+
+<% end %>
+
+<% else %>
+
+<%= form_for(current_user.liked_posts.build) do |f| %>
+
+<%= hidden_field_tag :hatapost_id, hatapost.id %>
+
+<%= f.submit 'お気入り登録する', class: 'btn btn-primary btn-block' %>
+
+<% end %>
+
+<% end %>
+

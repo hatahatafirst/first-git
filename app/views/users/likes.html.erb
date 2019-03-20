@@ -45,7 +45,7 @@
 <% end %>
 </li>
             <li class="
-<%= 'active' if current_page?(likes_user_path(@user)) %>
+<%= 'active' if current_page?(user_path(@user)) %>
 ">
 <%= link_to likes_user_path(@user) do %>
 お気に入り一覧 <span class="badge">
@@ -55,7 +55,7 @@
 </li>
         </ul>
 
-<%= render 'users', users: @followers %>
+<%= render 'hataposts/hataposts', hataposts: @likes %>
 
     </div>
 </div>

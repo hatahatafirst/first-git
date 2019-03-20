@@ -5,14 +5,20 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
+  get 'hataposts/:id', to: 'hataposts#update'
+  
   get 'signup', to: 'users#new'
-  resources :users, only: [:index, :show, :new, :create] do
+  resources :users, only: [:index, :show, :new, :create, :likes] do
     member do
       get :followings
       get :followers
+      get :likes
     end 
   end 
   
   resources :hataposts, only: [:create, :destroy, :edit, :update]
-  get 'hataposts/:id', to: 'hataposts#update'
-end
+  resources :relationships, only: [:create, :destroy]
+  resources :liked_posts, only: [:create, :destroy]
+end 
+  
+
