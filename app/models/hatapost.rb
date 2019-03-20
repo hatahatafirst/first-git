@@ -3,5 +3,5 @@ class Hatapost < ApplicationRecord
   
   validates :content, presence: true, length: { maximum: 140 }
   
-  has_many :liked_posts
+  has_many :liked_posts, dependent: :destroy
 end
