@@ -1,21 +1,18 @@
 <% if logged_in? %>
 
-<%= render 'hataposts/form', hatapost: @hatapost %>
+    <%= render 'hataposts/form', hatapost: @hatapost %>
 
-        <div class="col-xs-8">
-            
-<%= render 'hataposts/hataposts', hataposts: @hataposts %>
-
-        </div>
+    <div class="col-xs-8">
+        <%= render 'hataposts/hataposts', hataposts: @hataposts %>
     </div>
 
 <% else %> 
 
-<div class="center jumbotron">
-    <div class="text-center">
-        <h1>ようこそ</h1>
-<%= link_to 'いますぐ登録する', signup_path, class: 'btn btn-lg btn-primary' %>
+    <div class="center jumbotron">
+        <div class="text-center">
+            <h1>ようこそ</h1>
+    <%= link_to 'いますぐ登録する', signup_path, class: 'btn btn-lg btn-primary' %>
+        </div>
     </div>
-</div>
 
 <% end %>

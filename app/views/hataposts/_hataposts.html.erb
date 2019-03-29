@@ -2,43 +2,35 @@
 
 <% hataposts.each do |hatapost| %>
 
-    <li class="media">
-        <div class="media-left">
-            <img class="media-object img-rounded" src="
-<%= gravatar_url(hatapost.user, { size: 50 }) %>
-" alt="">
+    <li class="row">
+        
+        <div class="col-md-3">
+            <%= image_tag hatapost.user.image, class: "img-responsive" %>
         </div>
-        <div class="media-body">
+        <div class="col-md-7">
             <div>
                 
-<%= link_to hatapost.user.name, user_path(hatapost.user) %>
-<span class="text-muted">投稿日時
-<%= hatapost.created_at %>
-</span>
+                <%= link_to hatapost.user.name, user_path(hatapost.user) %>
+
+                <span class="text-muted">
+                    投稿日時<%= hatapost.created_at %>
+                </span>
             </div>
             <div>
-                <p>
-<%= hatapost.content %>
-                </p>
+                <p><%= hatapost.content %></p>
             </div>
             <div>
-                
-<% if current_user == hatapost.user %>
-
-<%= link_to "編集", edit_hatapost_path(hatapost), class: 'btn btn-danger btn-xs' %>
-
-<%= link_to "削除", hatapost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
-
-<% end %>
+                <% if current_user == hatapost.user %>
+                    <%= link_to "編集", edit_hatapost_path(hatapost), class: 'btn btn-danger btn-xs' %>
+                    <%= link_to "削除", hatapost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+                <% end %>
             </div>
             <div>
-<%= render 'liked_posts/liked_button', hatapost: hatapost %>               
+                <%= render 'liked_posts/liked_button', hatapost: hatapost %>               
             </div>
         </div>
     </li>
     
 <% end %>
-
-<%= paginate hataposts %>
-
 </ul>
+<%= paginate hataposts %>

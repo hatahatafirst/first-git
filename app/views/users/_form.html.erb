@@ -41,6 +41,15 @@
 <%= f.password_field :password_confirmation, class: 'form-control' %>
             
         </div>
+        <div class="form-group">
+            
+<%= f.label :'画像のアップロード' %>
+
+<%= f.file_field :image %>
+
+<p><%= f.check_box :remove_image %>画像を削除する</p>
+            
+        </div>
         
 <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
         
