@@ -4,6 +4,8 @@ class User < ApplicationRecord
     validates :email, presence: true, length: { maximum: 140 },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
                     uniqueness: { case_sensitive: false }
+    validates :password, presence: true
+    validates :password_confirmation, presence: true
                     
     mount_uploader :image, ImagesUploader
     

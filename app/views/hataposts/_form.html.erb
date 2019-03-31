@@ -2,6 +2,8 @@
             
 <%= form_for(hatapost) do |f| %>
 
+<%= render 'layouts/error_messages', model: hatapost %>
+
             <div class="form-group">
                 
 <%= f.label :content, '今なにしてる？(140文字以内)' %>
