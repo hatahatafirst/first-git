@@ -3,6 +3,7 @@
     border-top: solid 5px #00F9A9;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.32);
     background-color: #F5FFFA;
+    border-radius: 4px;
 }
 
 body {
@@ -15,5 +16,21 @@ body {
 }
 
 .form-group {
+    margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.panel-heading {
+    border-radius: 4px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.32);
+}
+
+.btn, .form-control {
+     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.32);
+     margin-bottom: 10px; 
+}
+
+.pagination {
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.32);
+    border-radius: 4px;
 }
