@@ -2,17 +2,17 @@
             
 <%= form_for(hatapost) do |f| %>
 
-<%= render 'layouts/error_messages', model: hatapost %>
+            <%= render 'layouts/error_messages', model: hatapost %>
 
             <div class="form-group">
                 
-<%= f.label :content, '今なにしてる？(140文字以内)' %>
+                <%= f.label :content, '今なにしてる？(140文字以内)' %>
 
-<%= f.text_area :content, class: 'form-control', rows: 5 %>
+                <%= f.text_area :content, class: 'form-control', rows: 5 %>
             </div>
             
-<%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+            <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
 
 <% end %>
 
-        </aside>
+</aside>
